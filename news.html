@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Новости — Россети Юг</title>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+  <link rel="icon" href="rosseti.jpg">
+  <script>
+    function toggleNews(button) {
+        const fullText = button.nextElementSibling;
+        const isVisible = fullText.style.display === 'block';
+        fullText.style.display = isVisible ? 'none' : 'block';
+        button.textContent = isVisible ? 'Показать' : 'Скрыть';
+    }
+</script>
+  <style>
+    body {
+      font-family: 'Open Sans', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f6f8;
+      color: #333;
+    }
+    header, footer {
+      max-width: 1100px;
+      margin: 40px auto 20px;
+      padding: 0 20px;
+    }
+
+    h1 {
+      color: #005baa;
+    }
+
+    .news-container {
+      max-width: 1100px;
+      margin: 0 auto 60px;
+      padding: 0 260px 0 20px;
+    }
+
+    .news-card {
+      background-color: #fff;
+      border-left: 5px solid #005baa;
+      border-radius: 8px;
+      padding: 20px;
+      margin: 20px 0;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+      transition: all 0.3s ease;
+    }
+
+    .news-card:hover {
+      background-color: #f1f7fd;
+    }
+
+    .news-date {
+      font-size: 14px;
+      color: #777;
+      margin-bottom: 8px;
+    }
+
+    .news-title {
+      font-size: 20px;
+      font-weight: bold;
+      color: #003366;
+      margin-bottom: 10px;
+    }
+
+    .news-preview {
+      font-size: 16px;
+    }
+
+    .news-full {
+      display: none;
+      margin-top: 10px;
+      font-size: 16px;
+      line-height: 1.5;
+      color: #333;
+    }
+
+    .toggle-btn {
+      margin-top: 10px;
+      background-color: #005baa;
+      color: white;
+      border: none;
+      padding: 8px 14px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 14px;
+    }
+
+    .toggle-btn:hover {
+      background-color: #004080;
+    }
+    a {
+        color: #005baa;
+        text-decoration: none;
+    }
+    a:hover {
+        text-decoration: underline;
+    }
+    .top-button {
+      position: fixed;
+      bottom: 20px;
+      right: 250px;
+      background-color: #005baa;
+      color: #fff;
+      padding: 12px 18px;
+      text-decoration: none;
+      border-radius: 6px;
+      font-size: 14px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      z-index: 999;
+      transition: background-color 0.3s;
+    }
+    .top-button:hover {
+        background-color: #004080;
+    }
+    .side-menu {
+      position: fixed;
+      right: 0;
+      top: 0;
+      width: 220px;
+      height: 100%;
+      background-color: #004080;
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+      padding-top: 20px;
+      box-shadow: -2px 0 6px rgba(0,0,0,0.1);
+      z-index: 1000;
+    }
+
+    .side-menu a {
+      color: white;
+      padding: 15px 20px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background-color 0.3s;
+    }
+
+    .side-menu a:hover {
+      background-color: #0066cc;
+    }
+
+    .side-menu .active {
+      background-color: #00264d;
+    }
+  </style>
+</head>
+<body>
+<a name="top"></a>
+<header>
+  <h1>Новости компании «Россети Юг»</h1>
+</header>
+
+<main class="news-container">
+  <div class="news-card">
+    <div class="news-date">16 мая 2025</div>
+    <div class="news-title">Круглый стол по вопросам энергоэффективности</div>
+    <div class="news-preview">В филиале ПАО «Россети Юг» – «Волгоградэнерго» состоялся круглый стол по вопросам энергоэффективности...</div>
+    <button class="toggle-btn" onclick="toggleNews(this)">Показать</button>
+    <div class="news-full">В филиале ПАО «Россети Юг» – «Волгоградэнерго» состоялся круглый стол по вопросам энергоэффективности, снижения уровня потерь, обеспечения 
+    надежного электроснабжения потребителей и импортозамещения в энергетической отрасли.</div>
+  </div>
+
+  <div class="news-card">
+    <div class="news-date">16 мая 2025</div>
+    <div class="news-title">Повышение надежности электроснабжения жителей Яшкульского района Калмыкии</div>
+    <div class="news-preview">«Россети Юг» повысили надёжность электроснабжения жителей Яшкульского района Калмыкии</div>
+    <button class="toggle-btn" onclick="toggleNews(this)">Показать</button>
+    <div class="news-full">Специалисты филиала «Россети Юг» – «Калмэнерго» отремонтировали в Яшкульском районе Калмыкии 16 
+    комплектных трансформаторных подстанций, заменили семь и выправили 10 опор воздушных линий электропередачи.</div>
+  </div>
+
+  <div class="news-card">
+    <div class="news-date">15 мая 2025</div>
+    <div class="news-title">Увеличение финасирования ремонтной программы в Ростовской области</div>
+    <div class="news-preview">«Россети Юг» в I квартале увеличили на 22 % финансирование ремонтной программы в Ростовской области</div>
+    <button class="toggle-btn" onclick="toggleNews(this)">Показать</button>
+    <div class="news-full">В I квартале 2025 года «Россети Юг» направили на ремонт и техническое 
+      обслуживание энергообъектов в Ростовской области 208 млн рублей. 
+      По сравнению с аналогичным периодом прошлого года показатель вырос на 22 %.</div>
+  </div>
+
+  <div class="news-card">
+    <div class="news-date">15 мая 2025</div>
+    <div class="news-title">Инвестицци в развитие энергокомплекса четырех южных регионов</div>
+    <div class="news-preview">«Россети Юг» в I квартале инвестировали 1,4 млрд рублей в развитие энергокомплекса четырех южных регионов</div>
+    <button class="toggle-btn" onclick="toggleNews(this)">Показать</button>
+    <div class="news-full">Компания «Россети Юг» в январе-марте 2025 года направила на развитие электросетевого комплекса в регионах присутствия 1,4 млрд рублей, что на 3 % превышает показатель аналогичного периода прошлого года. С начала года построены и реконструированы свыше 150 км линий электропередачи (ЛЭП), введены 23 МВА энергетических мощностей.</div>
+  </div>
+
+  <div class="news-card">
+    <div class="news-date">7 мая 2025</div>
+    <div class="news-title">Память павших в годы Великой Отечественной войны энергетиков</div>
+    <div class="news-preview">В «Россети Юг» почтили память павших в годы Великой Отечественной войны энергетиков</div>
+    <button class="toggle-btn" onclick="toggleNews(this)">Показать</button>
+    <div class="news-full">Накануне празднования 80-й годовщины Победы в Великой Отечественной войне ветераны и сотрудники «Россети Юг» во главе с генеральным директором компании Алексеем Рыбиным возложили цветы к мемориальной доске в честь воинов-энергетиков в Ростове-на-Дону.</div>
+  </div>
+  <div class="news-card">
+    <div class="news-date">15 апреля 2025</div>
+    <div class="news-title">Началось проектирование новых линий в Калмыкии</div>
+    <div class="news-preview">В регионе стартовало проектирование новой линии электропередачи для подключения агропредприятий...</div>
+    <button class="toggle-btn" onclick="toggleNews(this)">Показать</button>
+    <div class="news-full">Новая линия позволит обеспечить электроэнергией фермерские хозяйства и модернизировать сеть в труднодоступных районах Калмыкии.</div>
+  </div>
+
+  <div class="news-card">
+    <div class="news-date">8 апреля 2025</div>
+    <div class="news-title">Запуск мобильного приложения для клиентов</div>
+    <div class="news-preview">Компания представила обновлённое мобильное приложение для передачи показаний, оплаты и обратной связи...</div>
+    <button class="toggle-btn" onclick="toggleNews(this)">Показать</button>
+    <div class="news-full">Приложение позволяет клиентам передавать показания, получать уведомления о плановых отключениях и обращаться в службу поддержки.</div>
+  </div>
+
+  <div class="news-card">
+    <div class="news-date">2 апреля 2025</div>
+    <div class="news-title">Россети Юг признаны лучшим работодателем в регионе</div>
+    <div class="news-preview">Компания вошла в топ-5 работодателей ЮФО по версии «Работа.ру», обойдя ряд промышленных гигантов...</div>
+    <button class="toggle-btn" onclick="toggleNews(this)">Показать</button>
+    <div class="news-full">Компания признана надёжным работодателем благодаря достойным условиям труда, стабильной зарплате и карьерному росту сотрудников.</div>
+  </div>
+
+  <div class="news-card">
+    <div class="news-date">25 марта 2025</div>
+    <div class="news-title">Проект по энергосбережению в школах Астрахани</div>
+    <div class="news-preview">Специалисты компании провели уроки по энергосбережению для учащихся 5–11 классов в 10 школах региона...</div>
+    <button class="toggle-btn" onclick="toggleNews(this)">Показать</button>
+    <div class="news-full">Образовательный проект направлен на формирование культуры бережного потребления среди подрастающего поколения.</div>
+  </div>
+
+  <div class="news-card">
+    <div class="news-date">15 марта 2025</div>
+    <div class="news-title">Россети Юг завершили модернизацию подстанции в Элисте</div>
+    <div class="news-preview">Проведена полная замена оборудования и установка системы удалённого контроля состояния оборудования...</div>
+    <button class="toggle-btn" onclick="toggleNews(this)">Показать</button>
+    <div class="news-full">Модернизация позволила повысить надёжность электроснабжения столицы Калмыкии и сократить издержки на обслуживание.</div>
+  </div>
+</main>
+<a href="#top" class="top-button">Наверх ↑</a>
+<footer>
+  <div style="text-align:center; padding: 20px;">
+    <small>&copy; 2025 ПАО «Россети Юг» — Все права защищены</small>
+  </div>
+</footer>
+<div class="side-menu">
+  <a href="company.html">Компания</a>
+  <a href="news.html" class="active">Новости</a>
+  <a href="exchange_rate.html">Курс валют</a>
+  <a href="Contact_data.html">Контакты</a>
+  <a href="video.html">Видео</a>
+</div>
+</body>
+</html>
